@@ -1,0 +1,17 @@
+STEPS to use the APP
+
+echo "export HUGGINGFACEHUB_API_TOKEN='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'" >> ~/.zsh
+
+source ~/.zsh
+
+echo $HUGGINGFACE_API_TOKEN
+
+echo "export OPENAI_API_KEY='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'" >> ~/.zsh
+
+source ~/.zsh
+
+echo $OPENAI_API_KEY
+
+pip install -r requirements.txt
+
+python3 -m streamlit run app.py
