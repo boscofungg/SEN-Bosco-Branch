@@ -15,3 +15,6 @@ echo $OPENAI_API_KEY
 pip install -r requirements.txt
 
 python3 -m streamlit run app.py
+
+
+default model -> 14.60 seconds "What can i do if my child is crying at night"
