@@ -109,6 +109,16 @@ input_text = get_text()
 submit = st.button('Generate')  
 
 if submit:
-    response = get_answer(input_text)
-    st.subheader("Answer:")
-    st.write(response,key= 1)
+    result = f"Embedding Store Time: {vectorStoreTime}\n\n\n"
+    queries = ["What is ADHD?","What are the symptoms of ADHD?", "How is ADHD diagnosed?","What causes ADHD?", "How is ADHD treated?"]
+    for query in queries:
+        query_start = time.time()
+        response = get_answer(query)
+        query_end = time.time()
+        duration = query_end-query_start
+        result += f"Q:{query}\n\nAns:{response}\n\nTime:{duration}\n\n\n"
+    print("_____")
+    print(result)
+    print("_____")
+    st.subheader("Embedding Answer:")
+    st.write(result,key= 1)
