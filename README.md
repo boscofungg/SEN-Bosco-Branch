@@ -12,9 +12,9 @@ license: mit
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
-pip install -r requirements.txt
-echo "export OPENAI_API_KEY='Your openai api key'" >> ~/.zsh
-source ~/.zsh
-echo "export HUGGINGHUB_API_KEY='Your huggingface api key'" >> ~/.zsh
-source ~/.zsh
-python -m streamlit run app.py
+1. pip install -r requirements.txt
+2. echo "export OPENAI_API_KEY='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'" >> ~/.zsh
+3. source ~/.zsh
+4. echo "export HUGGINGHUB_API_KEY='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'" >> ~/.zsh
+5. source ~/.zsh
+6. python -m streamlit run app.py
