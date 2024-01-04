@@ -7,6 +7,8 @@ from langchain import HuggingFaceHub
 #and directories, executing shell commands, etc
 import pypdf
 import os
+
+os.environ["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"] = HUGGINGFACEHUB_API_TOKEN
 # An embedding is a vector (list) of floating point numbers. The distance between two vectors measures their relatedness. 
 # Small distances suggest high relatedness and large distances suggest low relatedness.
 # Generate Text Embedding using different LLM
@@ -15,6 +17,9 @@ from langchain.embeddings import OpenAIEmbeddings
 #from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_community.llms import HuggingFaceHub
 from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain.chains import LLMChain
+from langchain.prompts import PromptTemplate
+repo_id = "google/flan-t5-xxl"  # See https://huggingface.co/models?pipeline_tag=text-generation&sort=downloads for some other options
 #FAISS is an open-source library developed by Facebook AI Research for efficient similarity search and 
 #clustering of large-scale datasets, particularly with high-dimensional vectors. 
 #It provides optimized indexing structures and algorithms for tasks like nearest neighbor search and recommendation systems.
@@ -68,8 +73,9 @@ docs = split_docs(documents)
 # OR Using Hugging Face LLM for creating Embeddings for documents/Text
 #from langchain.embeddings import HuggingFaceEmbeddings, SentenceTransformerEmbeddings
 #embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+from langchain_community.embeddings import HuggingFaceEmbeddings
 
-embeddings = OpenAIEmbeddings()
+embeddings = HuggingFaceEmbeddings()
 
 #Store and Index vector space
 db = FAISS.from_documents(docs, embeddings)
@@ -82,8 +88,10 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage
 )
-llm = OpenAI()
-chain = load_qa_chain(llm, chain_type="stuff")
+llm = HuggingFaceHub(
+    repo_id=repo_id, model_kwargs={"temperature": 0.5, "max_length": 64}
+)
+llm_chain = LLMChain(prompt=prompt, llm=llm)
 
 # This function will transform the question that we raise into input text to search relevant docs
 def get_text():
