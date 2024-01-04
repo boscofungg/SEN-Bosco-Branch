@@ -6,7 +6,7 @@ source ~/.zsh
 
 echo $HUGGINGFACEHUB_API_TOKEN
 
-echo "export OPENAI_API_KEY='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'" >> ~/.zsh
+echo "export OPENAI_API_KEY='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'" >> ~/.zsh
 
 source ~/.zsh
 
