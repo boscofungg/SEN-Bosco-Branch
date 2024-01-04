@@ -13,7 +13,8 @@ import os
 from langchain.llms import OpenAI
 from langchain.embeddings import OpenAIEmbeddings
 #from langchain.embeddings.openai import OpenAIEmbeddings
-
+from langchain_community.llms import HuggingFaceHub
+from langchain_community.embeddings import HuggingFaceEmbeddings
 #FAISS is an open-source library developed by Facebook AI Research for efficient similarity search and 
 #clustering of large-scale datasets, particularly with high-dimensional vectors. 
 #It provides optimized indexing structures and algorithms for tasks like nearest neighbor search and recommendation systems.
