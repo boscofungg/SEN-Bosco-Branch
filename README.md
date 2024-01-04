@@ -13,7 +13,7 @@ license: mit
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
 1. pip install -r requirements.txt
-2. echo "export OPENAI_API_KEY='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'" >> ~/.zsh
+2. echo "export OPENAI_API_KEY='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'" >> ~/.zsh
 3. source ~/.zsh
 4. echo "export HUGGINGHUB_API_KEY='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'" >> ~/.zsh
 5. source ~/.zsh
