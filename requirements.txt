@@ -1,5 +1,6 @@
 langchain
 streamlit
+huggingface_hub
 openai
 tiktoken
 python-dotenv
