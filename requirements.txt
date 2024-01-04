@@ -1,6 +1,7 @@
 langchain
 streamlit
 huggingface_hub
+sentence_transformers
 openai
 tiktoken
 python-dotenv
