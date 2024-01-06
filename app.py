@@ -1,2 +1,2 @@
-if __init__ = __main__:
+if __init__ == __main__:
     print("Hello World")
