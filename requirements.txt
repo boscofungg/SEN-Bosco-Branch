@@ -11,3 +11,4 @@ tensorflow
 tensorflow-hub
 tensorflow_text
 fastembed
+langchain-community
