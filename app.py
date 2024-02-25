@@ -1,7 +1,7 @@
 # import os is used to enter the huggingface api token such that 
 # we dont have to do it everytime manually
 import os
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = ""
 
 #The below snippet helps us to import structured pdf file data for our tasks
 from langchain.document_loaders import PyPDFDirectoryLoader
